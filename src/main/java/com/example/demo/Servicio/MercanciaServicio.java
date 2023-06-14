@@ -3,10 +3,12 @@ package com.example.demo.Servicio;
 import com.example.demo.Entidad.Mercancia;
 import com.example.demo.Repositorio.MercanciaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MercanciaServicio implements servicioBase<Mercancia>{
 
     @Autowired
@@ -62,7 +64,6 @@ public class MercanciaServicio implements servicioBase<Mercancia>{
             throw new Exception(error.getMessage());
         }
     }
-
     @Override
     public boolean eliminar(Integer id) throws Exception {
         try {
@@ -73,7 +74,6 @@ public class MercanciaServicio implements servicioBase<Mercancia>{
             }else{
                 throw new Exception("Mercancia no encontrada");
             }
-
         }catch (Exception error){
             throw new Exception(error.getMessage());
         }
