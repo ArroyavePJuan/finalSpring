@@ -70,6 +70,8 @@ public class ZonaServicio implements servicioBase<Zona>{
             if (zonaOptional.isPresent()){
                 zonaRepositorio.deleteById(id);
                 return true;
+            }else{
+                throw new Exception("No se encontro la zona");
             }
         }catch (Exception error){
             throw new Exception(error.getMessage());
